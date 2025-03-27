@@ -1,0 +1,86 @@
+import React from 'react';
+
+function AnalysisResults({ results }) {
+  const { 
+    score, 
+    headerAnalysis, 
+    linkAnalysis, 
+    contentAnalysis, 
+    overallAssessment 
+  } = results;
+  
+  const getRiskColor = (score) => {
+    if (score < 30) return 'green';
+    if (score < 70) return 'orange';
+    return 'red';
+  };
+  
+  const getRiskLevel = (score) => {
+    if (score < 30) return 'Low Risk';
+    if (score < 70) return 'Medium Risk';
+    return 'High Risk';
+  };
+
+  return (
+    <div className="analysis-results">
+      <div 
+        className="risk-score" 
+        style={{ backgroundColor: getRiskColor(score) }}
+      >
+        <h2>Risk Score: {score}%</h2>
+        <p>{getRiskLevel(score)}</p>
+      </div>
+      
+      <div className="analysis-sections">
+        <section className="analysis-section">
+          <h3>Header Analysis</h3>
+          <ul>
+            {headerAnalysis.map((item, index) => (
+              <li key={`header-${index}`} className={item.suspicious ? 'suspicious' : ''}>
+                {item.message}
+                {item.suspicious && <span className="warning-icon">⚠️</span>}
+              </li>
+            ))}
+          </ul>
+        </section>
+        
+        <section className="analysis-section">
+          <h3>Link Analysis</h3>
+          <ul>
+            {linkAnalysis.map((item, index) => (
+              <li key={`link-${index}`} className={item.suspicious ? 'suspicious' : ''}>
+                {item.url}: {item.message}
+                {item.suspicious && <span className="warning-icon">⚠️</span>}
+              </li>
+            ))}
+          </ul>
+        </section>
+        
+        <section className="analysis-section">
+          <h3>Content Analysis</h3>
+          <ul>
+            {contentAnalysis.map((item, index) => (
+              <li key={`content-${index}`} className={item.suspicious ? 'suspicious' : ''}>
+                {item.message}
+                {item.suspicious && <span className="warning-icon">⚠️</span>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+      
+      <div className="overall-assessment">
+        <h3>Overall Assessment</h3>
+        <p>{overallAssessment}</p>
+      </div>
+      
+      <div className="action-buttons">
+        <button className="action-button report">Report as Phishing</button>
+        <button className="action-button safe">Mark as Safe</button>
+        <button className="action-button download">Download Report</button>
+      </div>
+    </div>
+  );
+}
+
+export default AnalysisResults;
