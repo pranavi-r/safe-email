@@ -41,4 +41,14 @@ A web application that looks at email in order to determine if they are phishing
 
 1. **Input Email**: Either paste the raw email content or upload an .eml file
 2. **Analyze**: Click the "Analyze Email" button to process the content
-3. **Review Results**: Examine the ri
+3. **Review Results**: Examine the risk score and detailed analysis sections
+Take Action: Report phishing emails or mark legitimate emails as safe
+
+License
+This project is licensed under the MIT License.
+
+Acknowledgments
+
+PhishTank for phishing URL database
+NLTK for natural language processing
+scikit-learn for machine learning capabilities
