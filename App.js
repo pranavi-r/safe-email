@@ -4,6 +4,8 @@ import EmailInput from './components/EmailInput';
 import AnalysisResults from './components/AnalysisResults';
 import LoadingSpinner from './components/LoadingSpinner';
 
+//issues with frontend and backend
+
 function App() {
   const [emailData, setEmailData] = useState('');
   const [results, setResults] = useState(null);
