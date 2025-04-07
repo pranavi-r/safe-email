@@ -11,6 +11,12 @@ A web application that looks at email in order to determine if they are phishing
 - Python (v3.8+)
 - pip
 
+## Frontend
+
+## Backend
+
+## Structure
+
 ### Installation
 
 1. Clone this repository

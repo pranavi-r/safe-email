@@ -4,7 +4,7 @@ import EmailInput from './components/EmailInput';
 import AnalysisResults from './components/AnalysisResults';
 import LoadingSpinner from './components/LoadingSpinner';
 
-//issues with frontend and backend
+//issues with frontend and backend integration 
 
 function App() {
   const [emailData, setEmailData] = useState('');
