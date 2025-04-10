@@ -12,8 +12,14 @@ A web application that looks at email in order to determine if they are phishing
 - pip
 
 ## Frontend
+- Input box for screenshots
+- Input box for email sender information
+- Second page that goes to determine whether something is a scam or not
 
 ## Backend
+- Analysis using common scams
+- Looks at user name and company it's being sent from
+- Scans page for any malware downloads
 
 ## Structure
 
